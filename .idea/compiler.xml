@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="travis-maven" />
         <module name="maven-travis" />
+        <module name="basic-design-pattern" />
       </profile>
     </annotationProcessing>
   </component>
