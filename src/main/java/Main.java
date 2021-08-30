@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println( "Singleton Design Pattern!" );
@@ -13,6 +15,21 @@ public class Main {
             System.out.println("Three object point to the same memory location");
         } else {
             System.out.println("Three object DO NOT point to the same memory location");
+        }
+
+        System.out.println( "Factory Design Pattern!" );
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter person type: ");
+        String personType = scanner.nextLine();
+        Person person1 = PersonFactory.create(personType);
+        System.out.print("Enter person type: ");
+        personType = scanner.nextLine();
+        Person person2 = PersonFactory.create(personType);
+        if (person1 instanceof Lecturer) {
+            System.out.println(person1.getString() + ((Lecturer)person1).getType());
+        }
+        if (person2 instanceof Student) {
+            System.out.println(person2.getString() + ((Student)person2).getType());
         }
     }
 }
